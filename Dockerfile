@@ -8,5 +8,5 @@ RUN apt update -y
 RUN apt install apache2 -y
 RUN apt install php-mbstring -y
 # configuration
-COPY ../project4/docker-newid.php /var/www/html/
+COPY docker-newid.php /var/www/html/
 EXPOSE 80
