@@ -8,5 +8,6 @@ RUN apt update -y
 RUN apt install apache2 -y
 RUN apt install php-mbstring -y
 # configuration
-COPY docker-newid.php /var/www/html/
-EXPOSE 80
+COPY newid.php /var/www/html/newid.php
+EXPOSE 8080
+CMD ["apache2ctl" "-D" "FOREGROUND"]

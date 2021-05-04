@@ -3,7 +3,9 @@ version: "3.9"
 services:
   # linux, apache, php container
   webserver:
+    # build from Dockerfile
     build: .
+    # map host port 8080 to container port 80
     ports:
       - "8080:80"
     environment:
@@ -20,8 +22,9 @@ services:
     ports:
       - "3306:3306"
       - "33060:33060"
+    # copy mysqldump into directory where it will be run at start-time
     volumes:
-      - "./idtable.sql:/docker-entrypoint-initdb.d/"
+      - "./idtable.sql:/docker-entrypoint-initdb.d/idtable.sql"
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
       MYSQL_USER: pma
