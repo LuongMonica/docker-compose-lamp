@@ -8,11 +8,6 @@ services:
     # map host port 8080 to container port 80
     ports:
       - "8080:80"
-    environment:
-      MYSQL_HOST: mysql
-      MYSQL_USER: pma
-      MYSQL_PASSWORD: f00barbin
-      MYSQL_DATABASE: cloudproject
     depends_on:
       - mysql
   
@@ -27,6 +22,3 @@ services:
       - "./idtable.sql:/docker-entrypoint-initdb.d/idtable.sql"
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_USER: pma
-      MYSQL_PASSWORD: f00barbin
-      MYSQL_DATABASE: cloudproject 
