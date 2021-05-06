@@ -22,3 +22,5 @@ services:
       - "./idtable.sql:/docker-entrypoint-initdb.d/idtable.sql"
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_USER: pma
+      MYSQL_PASSWORD: f00barbin
