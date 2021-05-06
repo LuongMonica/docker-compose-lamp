@@ -14,10 +14,10 @@ services:
       MYSQL_PASSWORD: f00barbin
       MYSQL_DATABASE: cloudproject
     depends_on:
-      - database-cit496
+      - mysql
   
   # mysql container
-  database-cit496:
+  mysql:
     image: "mysql:8.0"
     ports:
       - "3306:3306"

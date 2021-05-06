@@ -4,7 +4,7 @@
 <body>
 <?php
 
-  $dbhandle = mysqli_connect("database-cit496_1", "pma", "f00barbin", "cloudproject");
+  $dbhandle = mysqli_connect("mysql", "pma", "f00barbin", "cloudproject");
 	# args: server, user, pass, database_name
 
   if(!$dbhandle)
