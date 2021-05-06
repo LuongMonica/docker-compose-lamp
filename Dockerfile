@@ -1,13 +1,11 @@
 FROM ubuntu:bionic
-WORKDIR /cit496
-ENV MYSQL_USER=pma
-ENV MYSQL_PASSWORD=f00barbin
-ENV MYSQL_DATABASE=cloudproject
+ENV TZ=US/Pacific
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt update -y
 # install pkgs
 RUN apt install apache2 -y
-RUN apt install php-mbstring -y
+RUN apt install php php-mysql php-mbstring -y
 # configuration
-COPY newid.php /var/www/html/newid.php
-EXPOSE 8080
-CMD ["apache2ctl" "-D" "FOREGROUND"]
+COPY newid.php /var/www/html/
+EXPOSE 80
+CMD ["/usr/sbin/apachectl", "-D", "FOREGROUND"]
