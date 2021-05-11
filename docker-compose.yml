@@ -3,6 +3,7 @@ version: "3.9"
 services:
   # linux, apache, php container
   webserver:
+    container_name: webserver
     # build from Dockerfile
     build: .
     # map host port 8080 to container port 80
@@ -13,6 +14,7 @@ services:
   
   # mysql container
   mysql:
+    container_name: mysql
     image: "mysql:8.0"
     ports:
       - "3306:3306"
