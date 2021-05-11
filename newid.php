@@ -9,6 +9,7 @@
 
   if(!$dbhandle)
   { 
+    echo $db->error;
     echo("Nooooo...where is the database?!!!</body></html>");
     die();
   }

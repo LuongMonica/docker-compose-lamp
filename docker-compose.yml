@@ -9,13 +9,15 @@ services:
     # map host port 8080 to container port 80
     ports:
       - "8080:80"
+    links:
+      - mysql
     depends_on:
       - mysql
   
   # mysql container
   mysql:
     container_name: mysql
-    image: "mysql:8.0"
+    image: "mysql"
     ports:
       - "3306:3306"
       - "33060:33060"
@@ -26,3 +28,4 @@ services:
       MYSQL_ROOT_PASSWORD: rootpassword
       MYSQL_USER: pma
       MYSQL_PASSWORD: f00barbin
+      MYSQL_DATABASE: cloudproject
