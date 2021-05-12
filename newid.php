@@ -10,6 +10,7 @@
   if(!$dbhandle)
   { 
     echo $db->error;
+    echo "Connection error: " . $db->connect_error . "<br>\r\n";
     echo("Nooooo...where is the database?!!!</body></html>");
     die();
   }
