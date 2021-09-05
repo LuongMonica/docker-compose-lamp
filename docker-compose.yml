@@ -1,4 +1,4 @@
-version: "3.9"
+version: "3.9" # if you get an error with this, try changing it to just "3"
 
 services:
   # linux, apache, php container
